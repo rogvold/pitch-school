@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Анкета</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- other scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--My custom files -->
+    <script src="js/custom.js"></script>
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+    <style>
+      .mainLabel
+      {
+          margin-bottom: 5px;
+          font-size: 15px;
+          font-weight: bold;
+      }
+      .inputString
+      {
+          margin-bottom: 15px;
+          width: 100% !important;
+          border-radius: 15px;
+      }
+      hr {
+          border: none;
+          background-color: orange;
+          color: orange;
+          height: 2px;
+      }
+  </style>
+
+  </head>
+
+  <body id="main" style="background-image: url('img/purty_wood.png'); font-family: Verdana;  color: darkslategray; padding-top: 0px;">
+    <div class="container widthRestrict mainLayer" style="background-image: url('img/45.png'); margin-top: 0px; padding-top: 0px;">
+        <div class = "row" style="text-align: center;">
+            <p class="lead" style="margin-bottom: 20px; margin-top: 20px; font-size: 36px; color: orange;"> <b> Панель администратора </b> </p>
+        </div>
+        <div class="row">
+            <div id="questCont" class="row col-lg-7" style="padding-left: 60px; float: left; display: none;">
+                <div style="font-size: 22px; font-weight: bold;">
+                    <span id="nameOfPerson"></span><span>, </span>
+                    <span id="age"></span>
+                </div>
+                <div id="email" style="font-size: 17px; font-style: italic;"></div>
+                <div id="phone" style="font-size: 17px; font-style: italic;"></div>
+                <br/>
+                <div id="specialInfo">
+                    <p>
+                    <span> Статус : </span> <span style="font-weight: bold" id="personStatus"></span>
+                    </p>
+                    <div class="btn-group">
+                        <button id="unread" type="button" class="btn btn-default">Непрочитан</button>
+                        <button id="thinking" type="button" class="btn btn-default">Не определился</button>
+                        <button id="accepted" type="button" class="btn btn-default">Прошел</button>
+                        <button id="rejected" type="button" class="btn btn-default">Не прошел</button>
+                    </div>
+                    <br/>
+                    <br/>
+                    <p> Фирма, в которой участник проходит практику : </p>
+                    <input type="text" id="company" class="form-control" style="width: 200px; border-radius: 15px;">
+                    <br/>
+                    <p> Информация о слушателе : </p>
+                    <textarea id="myOpinion" style="border-radius: 20px;" class="form-control" rows="20"></textarea>
+                    <br/>
+                    <button id="saveChanges" type="button" class="btn btn-primary"> Сохранить изменения </button>
+                </div>
+                <hr/>
+                <br/>
+                <br/>
+                <div class="lead mainLabel"> Место учебы </div>
+                <div id="studyPlace" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> Место работы </div>
+                <div id="workPlace" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> Образование </div>
+                <div id="studyDegree" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> Как вы узнали о программе? </div>
+                <div id="programKnow" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> Почему вы хотите принять участие в программе? </div>
+                <div id="whyWant" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> Связано ли ваше желание участвовать в программе с поиском трудоустройства? </div>
+                <div id="workDesire" class="inputString"></div>
+                <hr/>
+                <br/>
+                <div class="lead mainLabel"> В какой фирме вы хотели бы проходить обучение? </div>
+                <div id="wantedCompany" class="inputString"></div>
+                <hr/>
+                <br/>
+            </div>
+            <div class="row col-lg-5" style="float: right;">
+                <div class="btn-group-vertical" style="margin-bottom: 15px; padding-top: 0px;">
+                    <button id="impMessageCont" type="button" style="text-align: left; border-radius: 20px; display: none;" onclick="getListOfNames('btn-danger')" class="btn btn-danger">
+                        Количество новых анкет <span id="impMessage" style="margin-left: 15px; margin-top: 2px;" class="badge pull-right"></span>
+                    </button>
+                    <button type="button" style="text-align: left; border-radius: 20px;" onclick="getListOfNames('all')" class="btn btn-success">
+                        Количество анкет <span id="countOfRecords" style="margin-left: 15px; margin-top: 2px;" class="badge pull-right"></span>
+                    </button>
+                    <button type="button" style="text-align: left; border-radius: 20px;" onclick="getListOfNames('btn-warning')" class="btn btn-warning">
+                        Количество ожидающих вердикта <span id="countOfWaiting" style="margin-left: 15px; margin-top: 2px;" class="badge pull-right"></span>
+                    </button>
+                    <button type="button" style="text-align: left; border-radius: 20px;" onclick="getListOfNames('btn-primary')" class="btn btn-primary">
+                        Количество поступивших <span id="countOfAccepted" style="margin-left: 15px; margin-top: 2px;" class="badge pull-right"></span>
+                    </button>
+                    <button type="button" style="text-align: left; border-radius: 20px;" onclick="getListOfNames('btn-info')" class="btn btn-info">
+                        Количество не поступивших <span id="countOfFailed" style="margin-left: 15px; margin-top: 2px;" class="badge pull-right"></span>
+                    </button>
+                </div>
+                <br/>
+
+                <div id="setOfNames" class="btn-group-vertical" style="margin-bottom: 30px; height: 500px; overflow: auto;">
+                    <p id="dataLoad" style="font-size: 17px;">Загрузка личных данных...</p>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+
+
+    <script>
+        function parseLogin()
+        {
+            Parse.initialize("2kf6HXgmmpNUTFmI6gTYB8mYZiuRLcUrYmUMZNXQ", "R5HtWYCI0MqGO9Pw8z8JSqhaauIbuptzJNxZjyvI");
+        }
+
+        elMas = Array("surname", "name", "email", "phone", "studyPlace", "workPlace", "studyDegree", "age", "programKnow", "whyWant", "workDesire", "wantedCompany");
+        statusEngMas = Array("unread", "thinking", "accepted", "rejected");
+        statusRusMas = Array("Непрочитан", "Не определился", "Прошел", "Не прошел");
+        glbRes = null;
+        glbId = -1;
+        function switchToPerson(id)
+        {
+            glbId = id;
+            var personData = glbRes[id];
+            $("#questCont").css("display", "block");
+            for (var i = 2; i < elMas.length; i++)
+            {
+                var str = personData.get(elMas[i]);
+                $("#" + elMas[i]).text( str );
+            }
+            $("#nameOfPerson").text( personData.get("surname") + " " + personData.get("name") );
+
+            var strStatus = personData.get("status");
+            $("#personStatus").text(strStatus);
+            var currCompany = personData.get("company");
+            document.getElementById("company").value = currCompany;
+
+            for (var i = 0; i < statusEngMas.length; i++)
+            {
+                $("#" + statusEngMas[i]).removeClass();
+            }
+            for (var i = 0; i < statusEngMas.length; i++)
+            {
+                if (strStatus != statusRusMas[i])
+                    $("#" + statusEngMas[i]).addClass("btn btn-default");
+                else
+                    $("#" + statusEngMas[i]).addClass("btn btn-primary");
+            }
+
+            var currOpinion = personData.get("opinion");
+            $("#myOpinion").html(currOpinion);
+        }
+
+        function getInfoFromParse()
+        {
+            var PersonData = Parse.Object.extend("PersonData");
+            var query = new Parse.Query(PersonData);
+            query.ascending("surname");
+            query.find(
+                    {
+                        success:
+                        function(results)
+                        {
+                            glbRes = results;
+                            getListOfNames('all');
+                        },
+                        error: function(error)
+                        {
+                        }
+                    });
+        }
+
+        function getListOfNames(filter)
+        {
+            var results = glbRes;
+            $("#setOfNames").html("");
+            var countOfUnread = 0;
+            var countOfRecords = results.length;
+            var countOfAccepted = 0;
+            var countOfFailed = 0;
+            var countOfWaiting = 0;
+            for (var i = 0; i < results.length; i++)
+            {
+                var personData = results[i];
+
+                var name = personData.get("name");
+                var surname = personData.get("surname");
+                var currStatus = personData.get("status");
+                var currCompany = personData.get("company");
+                if (currCompany != "")
+                    currCompany = " (" + currCompany + ")";
+                var strClass = "";
+                switch (currStatus)
+                {
+                    case "Не прошел":
+                        strClass = "btn-info";
+                        countOfFailed++;
+                        break;
+                    case "Прошел":
+                        strClass = "btn-primary";
+                            countOfAccepted++;
+                        break;
+                    case "Не определился":
+                        strClass = "btn-warning";
+                        countOfWaiting++;
+                        break;
+                    case "Непрочитан":
+                        strClass = "btn-danger";
+                        countOfUnread++;
+                        break;
+                }
+
+                if (filter == 'all' || filter == strClass)
+                {
+                    $("#setOfNames").html($("#setOfNames").html() +
+                            '<button type="button" style="padding-right: 25px; text-align: left;" onclick="switchToPerson(' + i + ')" class="btn ' + strClass + '">' + surname + ' ' + name + currCompany + '</button>');
+                }
+            }
+            if (countOfUnread > 0)
+            {
+                $("#impMessageCont").css("display", "block");
+                $("#impMessage").text(countOfUnread);
+            }
+            $("#countOfRecords").text(countOfRecords);
+            $("#countOfAccepted").text(countOfAccepted);
+            $("#countOfWaiting").text(countOfWaiting);
+            $("#countOfFailed").text(countOfFailed);
+            var CurrPerson = Parse.Object.extend("currPerson");
+            var query = new Parse.Query(CurrPerson);
+            query.get("NgPuCZ16Vq", {
+                success: function(currPerson) {
+                    var number = currPerson.get("number");
+                    if (number != -1)
+                    {
+                        switchToPerson(number);
+                        currPerson.set("number", -1);
+                        currPerson.save();
+                    }
+                },
+                error: function(currPerson, error) {
+
+                }
+            });
+        }
+
+        function updatePersonData()
+        {
+            var PersonData = Parse.Object.extend("PersonData");
+            var query = new Parse.Query(PersonData);
+
+            var currId = glbRes[glbId].id;
+            var strOpinion = document.getElementById("myOpinion").value;
+            var currStatus = $("#personStatus").text();
+            var currCompany = document.getElementById("company").value;
+
+            query.get( currId , {
+                success: function(personData) {
+                    personData.set("opinion", strOpinion );
+                    personData.set("status", currStatus );
+                    personData.set("company", currCompany);
+
+                    personData.save(null, {
+                        success: function(personData) {
+                            var CurrPerson = Parse.Object.extend("currPerson");
+                            var query = new Parse.Query(CurrPerson);
+                            query.get("NgPuCZ16Vq", {
+                                success: function(currPerson) {
+                                    currPerson.set("number", glbId);
+                                    currPerson.save(null, {
+                                        success: function(currPerson) {
+                                            location.reload(true);
+                                        },
+                                        error: function(currPerson, error) {
+                                        }
+                                    });
+                                },
+                                error: function(currPerson, error) {
+
+                                }
+                            });
+                        },
+                        error: function(personData, error) {
+                        }
+                    });
+                },
+                error: function(personData, error) {
+                }
+            });
+        }
+
+        $(document).ready(
+                function()
+                {
+                    parseLogin();
+                    getInfoFromParse();
+
+                    $("#unread").click(
+                            function ()
+                            {
+                                $("#personStatus").text("Непрочитан");
+                            }
+                    );
+                    $("#thinking").click(
+                            function ()
+                            {
+                                $("#personStatus").text("Не определился");
+                            }
+                    );
+                    $("#accepted").click(
+                            function ()
+                            {
+                                $("#personStatus").text("Прошел");
+                            }
+                    );
+                    $("#rejected").click(
+                            function ()
+                            {
+                                $("#personStatus").text("Не прошел");
+                            }
+                    );
+                    $("#saveChanges").click(
+                            function()
+                            {
+                                updatePersonData();
+                            }
+
+                    );
+                });
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter25716377 = new Ya.Metrika({id:25716377,
+                        webvisor:true,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/25716377" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>

@@ -1,0 +1,846 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+
+/*
+ * 
+ */
+
+html{
+	background-color: #76A813/*#999*/;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table.table1 {
+	border-color: green;
+	border-collapse: collapse;
+}
+
+table.table1 td{
+	padding: 4px 4px 10px 10px;
+	font-size: 12px;
+	border-style: solid;
+	border-color: green;
+	border-collapse: collapse;
+	border-width: 1px;
+	
+}
+
+table.main{
+	font-size: 11px;
+	border-collapse: collapse;
+}
+table.main thead{
+	/*border-bottom: #fff 7px solid;*/
+}
+table.main thead th{
+	color: #000000;
+	background-color: #ccc;
+	line-height: 24px;
+	padding: 0 7px;
+	border-right: #fff 1px dotted;
+	text-align: left;
+	vertical-align: top;
+}
+table.main td{
+	border-right: #bbbbbb 1px dotted;
+	padding: 0 1px 0 2px;
+}
+
+table.main A {
+    color: black;
+   }
+table.main A:visited {
+    color: black;
+   }
+table.main A:hover {
+    color: #2a7886;
+   }
+
+img.img1 {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#layout{
+	/*margin: -14px auto 0 auto;*/
+	margin: 0 auto;
+	width: 983px;
+	background: #77a915 url('http://2i.tusur.ru/images/background-top.jpg') top center no-repeat;
+}
+#layout.en{
+	background: #77a915 url('http://2i.tusur.ru/images/background-top-en.jpg') top center no-repeat;
+}
+
+/*
+ * Top
+ */
+
+#header{
+	height: 238px;
+}
+
+#top-menu{
+	list-style-type: none;
+	height: 32px;
+	/*position: relative;
+	left: 69px;
+	top: 25px;*/
+	width: 828px;
+	padding-left: 21px;
+	font-size: 16px;
+	margin-left: 70px;
+}
+
+#top-menu > li{
+float: left;
+line-height: 32px;
+font-weight: bold;
+color: #fff;
+padding: 0 11px;
+position: relative;
+display: inline;
+}
+
+#top-menu > li a{
+text-decoration: none;
+outline: none;
+color: #fff;
+}
+
+#top-menu > li > a{
+padding: 0 7px;
+text-align: center;
+display: block;
+}
+
+#top-menu > li > a:hover{
+font-weight: bold;
+color: #fdf65d;
+}
+
+#top-menu > li.active > a{
+color: #fdf65d;
+}
+
+#top-menu li ul li > a{
+display: block;
+color: #1d5c1f;
+//color: #1e76af;
+padding: 5px 11px;
+cursor: default;
+}
+
+#top-menu li ul li > a[href]{
+	cursor: pointer;
+}
+
+#top-menu li ul li > a:hover{
+background-image: url('http://2i.tusur.ru/images/top-menu-item-hover.png');
+background-repeat: repeat-y;
+color: #2275e9;
+}
+
+#top-menu li ul {
+z-index: 2;
+display: block;
+position: absolute;
+padding: 14px 2px 0 2px;
+margin: 0;
+color: #333;
+width: 230px;
+list-style-type: none;
+background-color: #f6f6f6;
+font-size: 12px;
+visibility: hidden;
+background: transparent url('http://2i.tusur.ru/images/top-menu-top.png') top left no-repeat;
+}
+
+#top-menu .menu-bottom {
+height: 28px;
+width: 100%;
+background: transparent url('http://2i.tusur.ru/images/top-menu-bottom.png') top left no-repeat;
+position: absolute;
+left: 0px;
+margin-left: 0;
+margin-top: 0;
+}
+
+#top-menu li ul li {
+display: list-item;
+float: none;
+line-height: 19px;
+}
+
+
+/*
+ * 
+ * 
+ */
+
+#header a.logo{
+	display: block;
+	position: relative;
+	left: 50px;
+	top: -10px;
+	width: 124px;
+	height: 124px;
+}
+
+#header a.ii-tusur_main{
+	position: relative;
+	left: 200px;
+	top: -110px;
+	width: 285px;
+	height: 30px;
+	display: block;
+}
+
+#header a.ii-tusur{
+	position: relative;
+	left: 200px;
+	top: -55px;
+	width: 285px;
+	height: 30px;
+	display: block;
+}
+
+#header a.tusur_main{
+	position: relative;
+	left: 485px;
+	top: -140px;
+	width: 88px;
+	height: 30px;
+	display: block;
+}
+
+#header a.tusur{
+	position: relative;
+	left: 485px;
+	top: -85px;
+	width: 88px;
+	height: 30px;
+	display: block;
+}
+
+#header .cetrified_main{
+	height: 55px;
+	position: relative;
+	top: 32px;
+	right: 0px;
+	font-size: 12px;
+	line-height: 27px;
+	text-align: right;
+	padding-right: 5px;
+	hover: #003D80;
+}
+#header .cetrified_main a{
+	color: #E8EFF5;
+}
+#header .cetrified_main a:hover{
+	color: #003D80;
+}
+
+#header .cetrs{
+	height: 31px;
+	width: 210;
+	position: right;
+	top: 200px;
+	text-align: right;
+}
+
+#header .english-version{
+	width: 99px;
+	height: 28px;
+	position: relative;
+	left: 884px;
+	top: 42px;
+	font-size: 12px;
+	line-height: 27px;
+	text-align: center;
+	background-image: url('http://2i.tusur.ru/images/i18n-background.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+#header .english-version a{
+	color: #003d80;
+}
+#header .english-version a:hover{
+	color: #fff;
+}
+#header .posting{
+	width: 62px;
+	height: 150px;
+	position: relative;
+	left: 918px;
+	top: -140px;
+	text-align: center;
+	padding-top: 4px;
+}
+#header .posting img{
+	border: none;
+	margin-top: 1px;
+}
+
+#links{
+	height: 35px;
+}
+
+#links .visit-card{
+	/*position: relative;
+	left: 654px;
+	top: 35px;*/
+	color: #fff;
+	font-size: 13px;
+	width: 245px;
+	float: right;
+	line-height: 35px;
+	margin-right: 35px;
+}
+#links .visit-card a{
+	color: #fff;
+
+}
+
+#links .bread-crumbs{
+	/*position: relative;
+	left: 84px;
+	top: 19px;*/
+	color: #fff;
+	font-size: 13px;
+	width: 850px;
+	line-height: 35px;
+	margin-left: 35px;
+}
+#links .bread-crumbs a{
+	color: #fff;
+
+}
+
+/*
+ * 
+ */
+
+#wrapper{
+	float: left;
+	background-image: url('http://2i.tusur.ru/images/background-bottom.jpg');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-color: #76a813;
+	width: 983px;
+}
+
+#sidebar{
+	float: left;
+	width: 242px;
+	margin-left: 20px;
+}
+
+#sidebar .widget .top{
+	height: 12px;
+	background-image: url('http://2i.tusur.ru/images/widget-background-top.png');
+	background-repeat: no-repeat;
+}
+
+#sidebar .widget .bottom{
+	height: 28px;
+	background-image: url('http://2i.tusur.ru/images/widget-background-bottom.png');
+	background-repeat: no-repeat;
+}
+
+#sidebar .widget .content{
+	background-image: url('http://2i.tusur.ru/images/widget-background-2.png');
+	background-repeat: repeat-y;
+	padding: 0 14px 0 3px;
+}
+
+#sidebar .widget .content .wrapper{
+background-image: url('http://2i.tusur.ru/images/widget-background-1.png');
+	background-repeat: repeat-x;
+	padding-top: 7px;
+}
+
+#sidebar .widget h2{
+	font-size: 18px;
+	font-weight: normal;
+	color: #003D80;
+	height: 27px;
+	background-image: url('http://2i.tusur.ru/images/widget-header.png');
+	background-repeat: no-repeat;
+	padding-left: 37px;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+	line-height: 27px;
+}
+
+#sidebar .widget h2 span{
+	background: transparent url('http://2i.tusur.ru/images/index-header.png') right center no-repeat;
+	float: left;
+	height: 27px;
+	padding: 0 14px;
+}
+
+#sidebar .widget ul.anounces,
+#sidebar .widget ul.news{
+	list-style-type: none;
+	color: #333;
+	color: #116512;
+	font-size: 12px;
+	margin: 0 14px;
+}
+
+#sidebar .widget h3{
+	margin-bottom: 7px;
+}
+
+#sidebar .widget h3 span.date{
+	float: left;
+	font-size: 29px;
+	line-height: 21px;
+	font-family: Tahoma;
+	font-weight: normal;
+}
+
+#sidebar .widget h3 span.month{
+	float: left;
+	background-color: #fff;
+	color: #333/*98c321*/;
+	font-weight: normal;
+	font-size: 11px;
+	height: 22px;
+	line-height: 11px;
+	padding: 0 3px;
+	margin-left: 3px;
+}
+
+#sidebar .widget h4 {
+	font-size: 12px;
+}
+
+
+#sidebar .widget ul.anounces .teaser,
+#sidebar .widget ul.news .teaser{
+	clear: both;
+	margin-top: 7px;
+}
+
+#sidebar .widget ul.anounces .teaser p,
+#sidebar .widget ul.news .teaser p{
+	text-align: left;
+}
+
+#sidebar .widget ul.anounces .teaser p.more,
+#sidebar .widget ul.news .teaser p.more{
+	text-align: right;
+}
+
+#sidebar .widget ul.anounces .teaser p.more a,
+#sidebar .widget ul.news a,
+#announces .content p.more a,
+#announces .content_body p.more a{
+	color: #005900;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+#sidebar .widget ul.anounces .teaser p.more a span,
+#sidebar .widget ul.news .teaser p.more a span,
+#announces .content p.more a span,
+#announces .content_body p.more a span{
+	color: #237209;
+	font-size: 11px; 
+}
+
+#sidebar .widget ul.anounces .teaser p.more a:hover,
+#sidebar .widget ul.news a:hover,
+#announces .content p.more a:hover,
+#announces .content_body p.more a:hover{
+	color: #003D80;
+}
+
+#sidebar .widget ul.anounces .teaser p.more a:hover span,
+#sidebar .widget ul.news .teaser p.more a:hover span,
+#announces .content p.more a:hover span,
+#announces .content_body p.more a:hover span{
+	color: #003D80;
+}
+
+#announces .vspacer {
+	height: 18px;
+}
+
+/*
+ * 
+ */
+
+#content,
+#announces{
+	float: left;
+	width: 715px;
+	margin-left: 3px;
+	margin-top: -7px;
+}
+
+#announces .content{
+	min-height: 74px;
+	padding: 5px 42px 14px 28px;
+	font-size: 13px;
+	color: #000000;
+	color: #116512;
+}
+#announces #mainpage.content{
+	background-image: url('http://2i.tusur.ru/images/content-background-plain.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+#announces .content_body{
+	padding: 5px 42px 14px 28px;
+	font-size: 13px;
+	color: #116512;
+}
+#announces #mainpage.content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-plain-body.png');
+}
+
+#content .content{
+	min-height: 74px;
+	padding: 5px 38px 14px 28px;
+	font-size: 13px;
+	color: #000000;
+	color: #116512;
+}
+#content #mainpage.content{
+	background-image: url('http://2i.tusur.ru/images/content-background-plain.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+#content .content_body{
+	padding: 5px 42px 14px 28px;
+	font-size: 13px;
+	color: #116512;
+}
+#content #mainpage.content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body.png');
+}
+
+#content .content p,
+#content .content_body p,
+#announces .content p,
+#announces .content_body p{
+	margin-bottom: 11px;
+	color: #116512;
+	text-indent: 0;
+	text-align: justify;
+}
+
+#content .after-content,
+#announces .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom.png');
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	height: 35px;
+}
+
+#content h1,
+#announces h1{
+	margin: 14px 0 21px 0;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5,
+#announces h1, #announces h2, #announces h3, #announces h4, #announces h5{
+	margin-top: 21px;
+	margin-bottom: 11px;
+	color: #000;
+}
+
+#content h1,
+#announces h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/index-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #003d80;
+	margin-bottom: 24px;
+}
+
+#content ul{
+	margin-left: 28px;
+	margin-top: 7px;
+	margin-bottom: 21px;
+}
+
+#content ul p{
+	text-indent: 0;
+}
+
+#content ol{
+	margin-left: 28px;
+	margin-top: 7px;
+	margin-bottom: 21px;
+}
+
+#content ol p{
+	text-indent: 0;
+}
+
+
+
+#content.wide,
+#content.production,
+#content.science,
+#content.education,
+#content.innovations,
+#content.development,
+#content.en-home{
+	width: 964px;
+	margin-left: 17px;
+}
+
+#content.wide .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-wide.png');
+}
+
+#content.wide .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-wide.png');
+}
+
+#content.wide .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-wide.png');
+	height: 35px;
+}
+
+#content.production .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-production.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.production .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-production.png');
+}
+
+#content.production .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-production.png');
+	height: 35px;
+}
+
+#content.production .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/production-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #005900;
+	margin-bottom: 24px;
+}
+
+#content.science .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-science.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.science .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-science.png');
+}
+
+#content.science .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-science.png');
+	height: 35px;
+}
+
+#content.science .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/science-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #e34200;
+	margin-bottom: 24px;
+}
+
+#content.education .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-education.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.education .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-education.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.education .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-education.png');
+	height: 35px;
+}
+
+#content.education .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/education-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #be1e2d;
+	margin-bottom: 24px;
+}
+
+#content.innovations .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-innovations.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.innovations .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-innovations.png');
+}
+
+#content.innovations .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-innovations.png');
+	height: 35px;
+}
+
+#content.innovations .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/innovations-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #8c008f;
+	margin-bottom: 24px;
+}
+
+#content.development .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-development.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.development .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-development.png');
+}
+
+#content.development .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-development.png');
+	height: 35px;
+}
+
+#content.development .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/development-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #424dcf;
+	margin-bottom: 24px;
+}
+#content.en-home .content{
+	background-image: url('http://2i.tusur.ru/images/content-background-top-en-home.png');
+	padding: 5px 42px 14px 28px;
+}
+
+#content.en-home .content_body{
+	background-image: url('http://2i.tusur.ru/images/content-background-body-en-home.png');
+}
+
+#content.en-home .after-content{
+	background-image: url('http://2i.tusur.ru/images/content-background-bottom-en-home.png');
+	height: 35px;
+}
+
+#content.en-home .content h1{
+	float: left;
+	height: 27px;
+	line-height: 27px;
+	background: transparent url('http://2i.tusur.ru/images/index-header.png') right center no-repeat;
+	padding: 0 14px;
+	margin-left: 32px;
+	font-size: 16px;
+	color: #424dcf;
+	margin-bottom: 24px;
+}
+
+.notice {
+	font-weight: bold;
+//	color: black;
+//	background-color: #FEE593;
+	color: white;
+//	background-color: #77A915;
+	background-color: #006DA0;
+	width: 88%;
+	padding: 8px 8px 8px 8px;
+	margin: 0px 0px 8px 0px;
+}
+
+.notice A {
+	color: white;
+}
+
+.notice_ans {
+	font-weight: bold;
+//	color: black;
+//	background-color: #FEE593;
+	color: white;
+//	background-color: #77A915;
+	background-color: #61a6d2;
+	width: 88%;
+	padding: 8px 8px 8px 8px;
+	margin: 0px 0px 8px 0px;
+}
+
+.notice_ans A {
+	color: white;
+}
+
+/*
+ * 
+ */
+
+#footer{
+	clear: both;
+	height: 60px;
+	background-image: url('http://2i.tusur.ru/images/footer-background.jpg');
+	background-repeat: no-repeat;
+}
+
+#footer p{
+	font-size: 12px;
+	font-family: Tahoma;
+	color: #fff;
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+}
+
+#footer a{
+	color: #fff;
+}

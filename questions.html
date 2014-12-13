@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Анкета</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- other scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--My custom files -->
+    <script src="js/custom.js"></script>
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+
+    <style>
+        .mainLabel
+        {
+           margin-bottom: 5px;
+           font-size: 17px;
+        }
+        .subLabel
+        {
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+        .inputString
+        {
+            margin-bottom: 15px;
+            width: 100% !important;
+            border-radius: 15px;
+        }
+    </style>
+  </head>
+
+  <body id="main" style="background-image: url('img/purty_wood.png'); font-family: Verdana;  color: darkslategray;">
+    <nav class="navbar navbar-default navbar-fixed-top navStyle" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="menuItem" href="index.html#main"><b>Главная</b></a></li>
+                    <li><a class="menuItem" href="news.html"><b>Новости</b></a></li>
+                    <li><a class="menuItem" href="history.html"><b>История</b></a></li>
+                    <li><a class="menuItem" href="programm.html"><b>Программа</b></a></li>
+                    <li><a class="menuItem" href="shedule.html"><b>Расписание</b></a></li>
+                    <li class="active"><a class="menuItem" href="questions.html"><b>Анкета</b></a></li>
+                    <li id="videoItem"><a class="menuItem" href="video.html"><b>Архив видеосюжетов</b></a></li>
+                    <li id="contactItem"><a class="menuItem" href="index.html#contacts"><b>Контакты</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container widthRestrict mainLayer" style="background-image: url('img/45.png')">
+
+        <div id="questions" class="row" style="padding-top: 20px; margin-bottom: 100px; text-align: center;">
+            <div class="navbar-form" style="text-align: center;">
+                <p class="lead" style="margin-bottom: 0px;"> Заполните, пожалуйста, предложенную анкету.</p>
+                <p class="lead" style="color: lightcoral;"> Внимание! Необходимо заполнить каждое поле!</p>
+                <div class="form-group" style="width: 400px;">
+                    <div class="lead mainLabel"> Фамилия </div>
+                    <input type="text" id="surname" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Имя </div>
+                    <input type="text" id="name" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Адрес электронной почты </div>
+                    <input type="text" id="email" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Телефон </div>
+                    <input type="text" id="phone" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Место учебы </div>
+                    <div class="lead subLabel"> Заведение, кафедра, факультет, курс, направление </div>
+                    <textarea id="studyPlace" class="form-control inputString" rows="2"></textarea>
+                    <br/>
+                    <div class="lead mainLabel"> Место работы </div>
+                    <div class="lead subLabel"> Организация, должность </div>
+                    <input type="text" id="workPlace" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Образование </div>
+                    <input type="text" id="studyDegree" class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Возраст </div>
+                    <input type="text" id="age"  class="form-control inputString">
+                    <br/>
+                    <div class="lead mainLabel"> Как вы узнали о программе? </div>
+                    <textarea id="programKnow" class="form-control inputString" rows="4"></textarea>
+                    <br/>
+                    <div class="lead mainLabel"> Почему вы хотите принять участие в программе? </div>
+                    <textarea id="whyWant" class="form-control inputString" rows="4"></textarea>
+                    <br/>
+                    <div class="lead mainLabel"> Связано ли ваше желание участвовать в программе с поиском трудоустройства? </div>
+                    <textarea id="workDesire" class="form-control inputString" rows="4"></textarea>
+                    <br/>
+                    <div class="lead mainLabel"> В какой фирме вы хотели бы проходить обучение? </div>
+                    <textarea id="wantedCompany" class="form-control inputString" rows="4"></textarea>
+                    <br/>
+                    <button id="buttonSubmit" type="submit" style="margin-top: 20px; margin-bottom: 10px; width: 100%; border-radius: 10px; font-size: 20px;" class="btn btn-primary">
+                        Готово!
+                    </button>
+                    <div class="lead" id="logLabel" style="margin-bottom: 0px; font-size: 17px; height: 60px;"></div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+
+    <script>
+        elMas = Array("surname", "name", "email", "phone", "studyPlace", "workPlace", "studyDegree", "age", "programKnow", "whyWant", "workDesire", "wantedCompany");
+
+        function fieldValidation()
+        {
+            var res = true;
+            for (var i = 0; i < elMas.length; i++)
+            {
+                var curElement = document.getElementById(elMas[i]);
+                if ( curElement.value == "" )
+                {
+                    $("#logLabel").text("Вы не заполнили все поля, пожалуйста, ответьте на все вопросы!");
+                    $("#logLabel").css("color", "red");
+                    res = false;
+                    break;
+                }
+            }
+            return res;
+        }
+
+        function submitData()
+        {
+            var PersonData = Parse.Object.extend("PersonData");
+            var personData = new PersonData();
+
+            for (var i = 0; i < elMas.length; i++)
+            {
+                var curElement = document.getElementById(elMas[i]);
+                personData.set(elMas[i], curElement.value);
+            }
+            personData.set("opinion", "");
+            personData.set("status", "Непрочитан");
+            personData.set("company", "");
+
+            personData.save(null, {
+                success: function(personData) {
+                    $("#logLabel").text("Анкета отправлена на рассмотрение!");
+                    $("#logLabel").css("color", "dodgerblue");
+                },
+                error: function(personData, error) {
+                }
+            });
+        }
+        function parseLogin() {
+            Parse.initialize("2kf6HXgmmpNUTFmI6gTYB8mYZiuRLcUrYmUMZNXQ", "R5HtWYCI0MqGO9Pw8z8JSqhaauIbuptzJNxZjyvI");
+        }
+        $(document).ready(
+                function() {
+                    parseLogin();
+                    $("#buttonSubmit").click(
+                            function() {
+                                var result = fieldValidation();
+                                if (result)
+                                {
+                                    submitData();
+                                    alert("Анкета отправлена!");
+                                }
+                            }
+                    );
+                });
+    </script>
+
+
+
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter25716377 = new Ya.Metrika({id:25716377,
+                        webvisor:true,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/25716377" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>
